@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بريدي السريع النفاث ⚡</title>
+  <title>بريدي السريع</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
 
     body {
@@ -17,39 +17,40 @@
       color: #e6edf3;
       display: flex;
       justify-content: center;
-      padding: 30px 14px;
+      padding: 40px 16px;
       min-height: 100vh;
     }
 
     .container {
       width: 100%;
-      max-width: 640px;
+      max-width: 620px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 22px;
+      margin-bottom: 28px;
     }
 
     header h1 {
       font-size: 26px;
-      font-weight: 800;
+      font-weight: 700;
       color: #58a6ff;
+      letter-spacing: -0.3px;
     }
 
     header p {
       color: #8b949e;
-      font-size: 13px;
-      margin-top: 4px;
+      font-size: 14px;
+      margin-top: 6px;
     }
 
     .box {
       background: #161b22;
       border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 18px;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
     }
 
     .email-label {
@@ -74,7 +75,7 @@
       padding: 12px 14px;
       border-radius: 8px;
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 600;
       direction: ltr;
       text-align: left;
       outline: none;
@@ -83,11 +84,11 @@
     button {
       cursor: pointer;
       border: none;
-      padding: 10px 16px;
+      padding: 11px 16px;
       border-radius: 8px;
       font-size: 14px;
       font-weight: 600;
-      transition: 0.15s;
+      transition: 0.15s ease;
     }
 
     .btn-copy {
@@ -112,7 +113,7 @@
       color: #58a6ff;
       border: 1px solid #30363d;
       padding: 6px 12px;
-      font-size: 12px;
+      font-size: 13px;
     }
     .btn-refresh:hover {
       background: #21262d;
@@ -137,19 +138,13 @@
       border-radius: 50%;
       background: #3fb950;
       margin-left: 6px;
-      box-shadow: 0 0 10px #3fb950;
-      animation: flash 1s infinite alternate;
-    }
-
-    @keyframes flash {
-      from { opacity: 0.4; }
-      to { opacity: 1; }
+      box-shadow: 0 0 8px #3fb950;
     }
 
     .messages-container {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
     .empty-state {
@@ -161,15 +156,14 @@
 
     .mail-card {
       background: #0d1117;
-      border: 1.5px solid #238636;
+      border: 1px solid #30363d;
       border-radius: 10px;
-      padding: 16px;
-      animation: fadeIn 0.2s ease-in-out;
+      padding: 14px;
+      transition: border-color 0.2s;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
+    .mail-card:hover {
+      border-color: #58a6ff;
     }
 
     .mail-meta {
@@ -189,26 +183,26 @@
 
     .mail-subject {
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 600;
       color: #f0f6fc;
       margin-bottom: 10px;
     }
 
     .otp-badge-box {
-      background: rgba(46, 160, 67, 0.2);
-      border: 1.5px solid #3fb950;
+      background: rgba(46, 160, 67, 0.15);
+      border: 1px solid #238636;
       border-radius: 8px;
-      padding: 12px 14px;
+      padding: 10px 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .otp-text {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: 4px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
       color: #3fb950;
       direction: ltr;
       user-select: all;
@@ -217,16 +211,15 @@
     .btn-otp-copy {
       background: #238636;
       color: #fff;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: 700;
+      padding: 4px 10px;
+      font-size: 12px;
       border-radius: 6px;
     }
 
     .mail-content-preview {
       background: #161b22;
       border: 1px solid #30363d;
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 12px;
       font-size: 13px;
       color: #c9d1d9;
@@ -244,12 +237,12 @@
 
   <div class="container">
     <header>
-      <h1>بريدي السريع النفاث ⚡</h1>
-      <p>فحص فوري كل ثانية - الكود يظهر ويُنسخ في لمح البصر</p>
+      <h1>بريدي السريع</h1>
+      <p>استقبال أكواد التحقق الفورية بدون تحديث وبتحكم كامل</p>
     </header>
 
     <div class="box">
-      <span class="email-label">البريد الحالي (محفوظ):</span>
+      <span class="email-label">البريد الحالي (محفوظ تلقائياً):</span>
       <div class="email-bar">
         <input type="text" id="emailDisplay" class="email-input" value="جاري التحميل..." readonly>
         <button class="btn-copy" id="copyBtn">نسخ</button>
@@ -259,14 +252,14 @@
 
     <div class="box">
       <div class="inbox-top">
-        <div><span class="live-dot"></span> فحص نفاث (1 ثانية)</div>
+        <div><span class="live-dot"></span> متصل وجاهز للاستقبال</div>
         <div style="display: flex; align-items: center; gap: 8px;">
           <span id="mailCount">0 رسائل</span>
-          <button class="btn-refresh" id="refreshBtn">تحديث الآن 🔄</button>
+          <button class="btn-refresh" id="refreshBtn">تحديث 🔄</button>
         </div>
       </div>
       <div class="messages-container" id="messagesList">
-        <div class="empty-state">صندوق الوارد فارغ. بانتظار وصول الكود...</div>
+        <div class="empty-state">صندوق الوارد فارغ. في انتظار وصول الرسائل...</div>
       </div>
     </div>
   </div>
@@ -299,33 +292,15 @@
         .trim();
     }
 
-    // صائد الأكواد الخارق (يدعم كل صيغ الـ OTP حتى لو الحروف مقتطعة)
     function findCode(text) {
       if (!text) return null;
-      // 1. بحث عن أرقام بجانب كلمات تفعيل أو حروف مفردة زي p
       const matchWithWords = text.match(/(?:code|otp|verify|verification|pin|رمز|كود|تأكيد|p)[:\s\-–]*([0-9]{4,8})\b/i);
       if (matchWithWords && matchWithWords[1]) return matchWithWords[1];
 
-      // 2. التقاط أول رقم مستقل بطول 4 إلى 8 خانات
       const genericMatch = text.match(/\b([0-9]{4,8})\b/);
       if (genericMatch && genericMatch[1]) return genericMatch[1];
 
       return null;
-    }
-
-    // تنبيه صوتي فوري خفيف لما الكود يوصل
-    function playAlertSound() {
-      try {
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.frequency.value = 880; // نغمة واضحة
-        gain.gain.value = 0.1;
-        osc.start();
-        osc.stop(ctx.currentTime + 0.15);
-      } catch (e) {}
     }
 
     function saveState() {
@@ -385,10 +360,9 @@
       }
     }
 
-    // فحص فائق السرعة كل 1000 ملي ثانية (ثانية واحدة فقط)
     function startListening() {
       stopListening();
-      pollTimer = setInterval(checkNewMail, 1000);
+      pollTimer = setInterval(checkNewMail, 1000); // سرعة 1 ثانية
     }
 
     function stopListening() {
@@ -404,18 +378,13 @@
         const data = await res.json();
         const incoming = data.list || [];
 
-        let hasNew = false;
-
         for (const msg of incoming) {
           if (!msg || !msg.mail_id) continue;
           if (String(msg.mail_from).includes('no-reply@guerrillamail.com')) continue;
 
           const exists = cachedMessages.some(m => m.mail_id === msg.mail_id);
           if (!exists) {
-            hasNew = true;
-            // عرض فوري سريع بمقتطف الرسالة بدون انتظار ثانية واحدة
             const quickBody = sanitizeText(msg.mail_excerpt || '');
-            
             const newMsgObj = {
               mail_id: String(msg.mail_id),
               mail_from: String(msg.mail_from || '').slice(0, 150),
@@ -427,9 +396,8 @@
             cachedMessages.unshift(newMsgObj);
             saveState();
             renderMessages();
-            playAlertSound();
 
-            // جلب النص الكامل في الخلفية لتحديثه بهدوء بدون تعطيل المستخدم
+            // تحديث المحتوى بالكامل في الخلفية
             fetch(`${API_BASE}?f=fetch_email&email_id=${encodeURIComponent(msg.mail_id)}&sid_token=${encodeURIComponent(emailSid)}`)
               .then(r => r.json())
               .then(bodyData => {
@@ -457,7 +425,7 @@
       if (cachedMessages.length === 0) {
         const empty = document.createElement('div');
         empty.className = 'empty-state';
-        empty.textContent = 'صندوق الوارد فارغ. بانتظار وصول الكود...';
+        empty.textContent = 'صندوق الوارد فارغ. في انتظار وصول الرسائل...';
         listEl.appendChild(empty);
         return;
       }
@@ -497,7 +465,7 @@
 
           const otpBtn = document.createElement('button');
           otpBtn.className = 'btn-otp-copy';
-          otpBtn.textContent = 'نسخ الكود ⚡';
+          otpBtn.textContent = 'نسخ الكود';
           otpBtn.addEventListener('click', () => copySafe(code, otpBtn));
 
           otpBox.appendChild(otpText);
@@ -517,8 +485,8 @@
     function copySafe(text, btn) {
       navigator.clipboard.writeText(text).then(() => {
         const old = btn.textContent;
-        btn.textContent = 'تم النسخ! ✓';
-        setTimeout(() => btn.textContent = old, 1000);
+        btn.textContent = 'تم!';
+        setTimeout(() => btn.textContent = old, 1200);
       });
     }
 
@@ -533,7 +501,7 @@
         const btn = e.target;
         btn.textContent = '...';
         await checkNewMail();
-        btn.textContent = 'تحديث الآن 🔄';
+        btn.textContent = 'تحديث 🔄';
       });
 
       document.getElementById('newEmailBtn').addEventListener('click', () => {
