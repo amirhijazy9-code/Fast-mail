@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#0a0e17">
-<meta name="description" content="ط¨ط±ظٹط¯ ظ…ط¤ظ‚طھ ط³ط±ظٹط¹ ظ„ط§ط³طھظ‚ط¨ط§ظ„ ط£ظƒظˆط§ط¯ ط§ظ„طھط­ظ‚ظ‚ ظپظˆط±ط§ظ‹">
+<meta name="description" content="بريد مؤقت سريع لاستقبال أكواد التحقق فوراً">
 <meta name="author" content="Kareem">
 
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -15,14 +15,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 
-<title>SnapMail â€” ط¨ط±ظٹط¯ظƒ ط§ظ„ط³ط±ظٹط¹</title>
+<title>SnapMail — بريدك السريع</title>
 
 <style>
 /* =========================================================
    SnapMail v2.5
-   - ط­ط±ظƒط§طھ ظ†ط§ط¹ظ…ط©
-   - 5 ط«ظٹظ…ط§طھ
-   - ط´ط±ظٹط· طھط±ط§ط¬ط¹ ط¹ظ† طھط؛ظٹظٹط± ط§ظ„ط¥ظٹظ…ظٹظ„
+   - حركات ناعمة
+   - 5 ثيمات
+   - شريط تراجع عن تغيير الإيميل
    ========================================================= */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -831,9 +831,9 @@ body {
 
   <!-- TOP BAR -->
   <div class="topbar">
-    <div class="clock">ًں•گ <b id="clockTime">--:--:--</b></div>
+    <div class="clock">🕐 <b id="clockTime">--:--:--</b></div>
     <div class="actions" style="position: relative;">
-      <button class="icon-btn" id="themeBtn" title="طھط؛ظٹظٹط± ط§ظ„ظ„ظˆظ†">
+      <button class="icon-btn" id="themeBtn" title="تغيير اللون">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="13.5" cy="6.5" r="2.5"/>
           <circle cx="17.5" cy="14.5" r="2.5"/>
@@ -842,7 +842,7 @@ body {
           <path d="M12 2a10 10 0 1 0 0 20"/>
         </svg>
       </button>
-      <button class="icon-btn" id="soundBtn" title="طµظˆطھ ط§ظ„ط¥ط´ط¹ط§ط±">
+      <button class="icon-btn" id="soundBtn" title="صوت الإشعار">
         <svg id="soundIconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
           <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
@@ -867,10 +867,10 @@ body {
   <header class="hero">
     <div class="hero-badge">
       <span class="dot"></span>
-      LIVE â€¢ SnapMail
+      LIVE • SnapMail
     </div>
-    <h1>ط¨ط±ظٹط¯ظƒ ط§ظ„ط³ط±ظٹط¹ âڑ،</h1>
-    <p>ط£ظƒظˆط§ط¯ ط§ظ„طھط­ظ‚ظ‚ طھظˆطµظ„ظƒ ظپظˆط±ط§ظ‹ â€” ط¨ط¯ظˆظ† طھط³ط¬ظٹظ„طŒ ط¨ط¯ظˆظ† ط§ظ†طھط¸ط§ط±</p>
+    <h1>بريدك السريع ⚡</h1>
+    <p>أكواد التحقق توصلك فوراً — بدون تسجيل، بدون انتظار</p>
   </header>
 
   <!-- EMAIL CARD -->
@@ -880,29 +880,29 @@ body {
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
       </svg>
-      ط¨ط±ظٹط¯ظƒ ط§ظ„ط­ط§ظ„ظٹ
+      بريدك الحالي
     </div>
     <div class="ebar">
-      <input type="text" id="emailDisplay" class="einput" value="ط¬ط§ط±ظٹ ط§ظ„طھط­ظ…ظٹظ„..." readonly spellcheck="false" autocomplete="off">
+      <input type="text" id="emailDisplay" class="einput" value="جاري التحميل..." readonly spellcheck="false" autocomplete="off">
       <button class="btn btn-primary" id="copyBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
           <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
         </svg>
-        ظ†ط³ط®
+        نسخ
       </button>
       <button class="btn btn-ghost" id="newEmailBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12a9 9 0 1 1-9-9c2.5 0 4.8 1 6.5 2.6"/>
           <polyline points="21 3 21 9 15 9"/>
         </svg>
-        ط¬ط¯ظٹط¯
+        جديد
       </button>
     </div>
 
     <div class="undo-bar" id="undoBar">
       <div class="undo-info">
-        <span>âڑ ï¸ڈ <b>ط؛ظٹظ‘ط±طھ ط§ظ„ط¨ط±ظٹط¯ ط¨ط§ظ„ط؛ظ„ط·طں</b> ظپط±طµط© ظ„ظ„ط±ط¬ظˆط¹</span>
+        <span>⚠️ <b>غيّرت البريد بالغلط؟</b> فرصة للرجوع</span>
         <span class="undo-timer" id="undoTimer">10s</span>
       </div>
       <button class="btn btn-warn btn-sm" id="undoBtn">
@@ -910,7 +910,7 @@ body {
           <polyline points="1 4 1 10 7 10"/>
           <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
         </svg>
-        ط±ط¬ظ‘ط¹ ط§ظ„ظ‚ط¯ظٹظ…
+        رجّع القديم
       </button>
     </div>
   </div>
@@ -920,16 +920,16 @@ body {
     <div class="ihead">
       <div class="status">
         <span class="dot"></span>
-        <span>ط¬ط§ظ‡ط² ظ„ظ„ط§ط³طھظ‚ط¨ط§ظ„</span>
+        <span>جاهز للاستقبال</span>
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <div class="pill" id="mailCount">0 ط±ط³ط§ظ„ط©</div>
+        <div class="pill" id="mailCount">0 رسالة</div>
         <button class="btn-refresh" id="refreshBtn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12a9 9 0 1 1-9-9c2.5 0 4.8 1 6.5 2.6"/>
             <polyline points="21 3 21 9 15 9"/>
           </svg>
-          طھط­ط¯ظٹط«
+          تحديث
         </button>
       </div>
     </div>
@@ -939,8 +939,8 @@ body {
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
           <polyline points="22,6 12,13 2,6"/>
         </svg>
-        <div style="font-weight: 800; margin-bottom: 6px;">طµظ†ط¯ظˆظ‚ ط§ظ„ظˆط§ط±ط¯ ظپط§ط¶ظٹ</div>
-        <div style="font-size: 12px; opacity: 0.7;">ط§ظ„ط±ط³ط§ط¦ظ„ ظ‡طھط¸ظ‡ط± ظ‡ظ†ط§ ط£ظˆطھظˆظ…ط§طھظٹظƒ</div>
+        <div style="font-weight: 800; margin-bottom: 6px;">صندوق الوارد فاضي</div>
+        <div style="font-size: 12px; opacity: 0.7;">الرسائل هتظهر هنا أوتوماتيك</div>
       </div>
     </div>
   </div>
@@ -952,9 +952,9 @@ body {
 <script>
 /* =========================================================
    SnapMail v2.5
-   - ط§ط³طھظ‚ط¨ط§ظ„ ط£ظƒظˆط§ط¯ ط§ظ„طھط­ظ‚ظ‚
-   - 5 ط«ظٹظ…ط§طھ
-   - طھط±ط§ط¬ط¹ ط¹ظ† طھط؛ظٹظٹط± ط§ظ„ط¥ظٹظ…ظٹظ„
+   - استقبال أكواد التحقق
+   - 5 ثيمات
+   - تراجع عن تغيير الإيميل
    ========================================================= */
 
 (function () {
@@ -1017,10 +1017,10 @@ function findCode(text) {
   if (typeof text !== 'string' || !text) return null;
   var t = text.slice(0, 5000);
 
-  var m1 = t.match(/(?:code|otp|verify|verification|pin|ظƒظˆط¯|ط±ظ…ط²|طھط£ظƒظٹط¯|ط§ظ„طھط­ظ‚ظ‚|ط§ظ„طھظپط¹ظٹظ„)[^\d]{0,25}(\d{4,8})\b/i);
+  var m1 = t.match(/(?:code|otp|verify|verification|pin|كود|رمز|تأكيد|التحقق|التفعيل)[^\d]{0,25}(\d{4,8})\b/i);
   if (m1) return m1[1];
 
-  var m2 = t.match(/(?::|is|ظ‡ظˆ|ط§ظ„طھط§ظ„ظٹ)\s*(\d{4,8})\b/i);
+  var m2 = t.match(/(?::|is|هو|التالي)\s*(\d{4,8})\b/i);
   if (m2) return m2[1];
 
   return null;
@@ -1170,7 +1170,7 @@ function loadAccount(forceNew) {
     return;
   }
 
-  inp.value = 'ط¬ط§ط±ظٹ ط§ظ„طھظˆظ„ظٹط¯...';
+  inp.value = 'جاري التوليد...';
   inp.disabled = true;
   stopPoll();
 
@@ -1187,13 +1187,13 @@ function loadAccount(forceNew) {
     render();
     startPoll();
     check();
-    toast('âœ… طھظ… ط¥ظ†ط´ط§ط، ط¨ط±ظٹط¯ ط¬ط¯ظٹط¯');
+    toast('✅ تم إنشاء بريد جديد');
   }).catch(function (e) {
     inp.disabled = false;
-    inp.value = 'ظپط´ظ„ ط§ظ„ط§طھطµط§ظ„ â€” ط§ط¶ط؛ط· "ط¬ط¯ظٹط¯"';
+    inp.value = 'فشل الاتصال — اضغط "جديد"';
     inp.classList.add('error');
     setTimeout(function () { inp.classList.remove('error'); }, 2000);
-    toast('طھط¹ط°ط± ط¥ظ†ط´ط§ط، ط§ظ„ط¨ط±ظٹط¯', 'error');
+    toast('تعذر إنشاء البريد', 'error');
   });
 }
 
@@ -1263,7 +1263,7 @@ function check() {
           persist();
           render();
           beep();
-          toast('ًں“¬ ظˆطµظ„طھ ط±ط³ط§ظ„ط© ط¬ط¯ظٹط¯ط©!', 'info');
+          toast('📬 وصلت رسالة جديدة!', 'info');
         }
       });
     })
@@ -1276,7 +1276,7 @@ function check() {
 function render() {
   var list = $('messagesList');
   var count = $('mailCount');
-  count.textContent = S.msgs.length + (S.msgs.length === 1 ? ' ط±ط³ط§ظ„ط©' : ' ط±ط³ط§ط¦ظ„');
+  count.textContent = S.msgs.length + (S.msgs.length === 1 ? ' رسالة' : ' رسائل');
 
   list.innerHTML = '';
 
@@ -1287,8 +1287,8 @@ function render() {
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">' +
       '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>' +
       '<polyline points="22,6 12,13 2,6"/></svg>' +
-      '<div style="font-weight: 800; margin-bottom: 6px;">طµظ†ط¯ظˆظ‚ ط§ظ„ظˆط§ط±ط¯ ظپط§ط¶ظٹ</div>' +
-      '<div style="font-size: 12px; opacity: 0.7;">ط§ظ„ط±ط³ط§ط¦ظ„ ظ‡طھط¸ظ‡ط± ظ‡ظ†ط§ ط£ظˆطھظˆظ…ط§طھظٹظƒ</div>';
+      '<div style="font-weight: 800; margin-bottom: 6px;">صندوق الوارد فاضي</div>' +
+      '<div style="font-size: 12px; opacity: 0.7;">الرسائل هتظهر هنا أوتوماتيك</div>';
     list.appendChild(em);
     return;
   }
@@ -1320,13 +1320,13 @@ function render() {
     if (service) {
       var chip = document.createElement('div');
       chip.className = 'service-chip';
-      chip.textContent = 'ًں”– ' + service;
+      chip.textContent = '🔖 ' + service;
       card.appendChild(chip);
     }
 
     var subj = document.createElement('div');
     subj.className = 'msubj';
-    subj.textContent = m.subject || '(ط¨ط¯ظˆظ† ط¹ظ†ظˆط§ظ†)';
+    subj.textContent = m.subject || '(بدون عنوان)';
     card.appendChild(subj);
 
     if (code) {
@@ -1336,7 +1336,7 @@ function render() {
       var inner = document.createElement('div');
       var lbl = document.createElement('div');
       lbl.className = 'otp-lbl';
-      lbl.textContent = 'ظƒظˆط¯ ط§ظ„طھط­ظ‚ظ‚';
+      lbl.textContent = 'كود التحقق';
       var cd = document.createElement('div');
       cd.className = 'otp-code';
       cd.textContent = code;
@@ -1347,7 +1347,7 @@ function render() {
 
       var btn = document.createElement('button');
       btn.className = 'btn-otp';
-      btn.textContent = 'âڑ، ظ†ط³ط® ط§ظ„ظƒظˆط¯';
+      btn.textContent = '⚡ نسخ الكود';
       btn.addEventListener('click', function () { copy(code, btn, true); });
 
       box.appendChild(inner);
@@ -1357,7 +1357,7 @@ function render() {
 
     var body = document.createElement('div');
     body.className = 'mbody';
-    body.textContent = m.body || '(ظ…ط­طھظˆظ‰ ظپط§ط±ط؛)';
+    body.textContent = m.body || '(محتوى فارغ)';
     card.appendChild(body);
 
     list.appendChild(card);
@@ -1370,10 +1370,10 @@ function copy(text, btn, celebrate) {
   var done = function () {
     if (btn) {
       var old = btn.textContent;
-      btn.textContent = 'âœ“ طھظ… ط§ظ„ظ†ط³ط®';
+      btn.textContent = '✓ تم النسخ';
       setTimeout(function () { btn.textContent = old; }, 1200);
     }
-    toast('ًں“‹ طھظ… ط§ظ„ظ†ط³ط®');
+    toast('📋 تم النسخ');
     if (celebrate) confetti();
   };
 
@@ -1488,7 +1488,7 @@ function doUndo() {
   check();
 
   cancelUndo();
-  toast('â†©ï¸ڈ طھظ… ط§ط³طھط±ط¬ط§ط¹ ط§ظ„ط¨ط±ظٹط¯ ط§ظ„ظ‚ط¯ظٹظ…', 'warn');
+  toast('↩️ تم استرجاع البريد القديم', 'warn');
 }
 
 function newEmailFlow() {
@@ -1526,13 +1526,13 @@ function bindUI() {
     if (validEmail(S.email)) {
       copy(S.email, this, false);
     } else {
-      toast('ظ„ط§ ظٹظˆط¬ط¯ ط¨ط±ظٹط¯ ظ„ظ„ظ†ط³ط®', 'error');
+      toast('لا يوجد بريد للنسخ', 'error');
     }
   });
 
   $('newEmailBtn').addEventListener('click', function () {
     if (S.undoTimer) {
-      toast('ط§ظ†طھط¸ط± ط§ظ†طھظ‡ط§ط، ظپط±طµط© ط§ظ„طھط±ط§ط¬ط¹', 'warn');
+      toast('انتظر انتهاء فرصة التراجع', 'warn');
       return;
     }
     newEmailFlow();
@@ -1569,14 +1569,14 @@ function bindUI() {
       d.classList.toggle('active', d === dot);
     });
     persist();
-    toast('ًںژ¨ طھظ… طھط؛ظٹظٹط± ط§ظ„ظ„ظˆظ†');
+    toast('🎨 تم تغيير اللون');
   });
 
   $('soundBtn').addEventListener('click', function () {
     S.soundOn = !S.soundOn;
     $('soundIconOn').style.display  = S.soundOn ? 'block' : 'none';
     $('soundIconOff').style.display = S.soundOn ? 'none'  : 'block';
-    toast(S.soundOn ? 'ًں”ٹ ط§ظ„طµظˆطھ ظ…ظپط¹ظ‘ظ„' : 'ًں”‡ ط§ظ„طµظˆطھ ظ…ظƒطھظˆظ…');
+    toast(S.soundOn ? '🔊 الصوت مفعّل' : '🔇 الصوت مكتوم');
     if (S.soundOn) beep();
   });
 
