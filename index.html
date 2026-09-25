@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#0a0e17">
-<meta name="description" content="بريد مؤقت سريع لاستقبال أكواد التحقق فوراً">
+<meta name="description" content="ط¨ط±ظٹط¯ ظ…ط¤ظ‚طھ ط³ط±ظٹط¹ ظ„ط§ط³طھظ‚ط¨ط§ظ„ ط£ظƒظˆط§ط¯ ط§ظ„طھط­ظ‚ظ‚ ظپظˆط±ط§ظ‹">
 <meta name="author" content="Kareem">
 
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -15,9 +15,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 
-<title>SnapMail — بريدك السريع</title>
+<title>SnapMail â€” ط¨ط±ظٹط¯ظƒ ط§ظ„ط³ط±ظٹط¹</title>
 
 <style>
+/* =========================================================
+   SnapMail v2.5
+   - ط­ط±ظƒط§طھ ظ†ط§ط¹ظ…ط©
+   - 5 ط«ظٹظ…ط§طھ
+   - ط´ط±ظٹط· طھط±ط§ط¬ط¹ ط¹ظ† طھط؛ظٹظٹط± ط§ظ„ط¥ظٹظ…ظٹظ„
+   ========================================================= */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -65,6 +72,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ============ BACKGROUND: mesh gradient + noise ============ */
 .bg-mesh {
   position: fixed;
   inset: 0;
@@ -99,6 +107,7 @@ body {
   100% { transform: translate(-6vw, 6vh) scale(1.15); }
 }
 
+/* grain overlay */
 .bg-mesh .grain {
   position: absolute;
   inset: 0;
@@ -107,6 +116,7 @@ body {
   mix-blend-mode: overlay;
 }
 
+/* ============ APP ============ */
 .app {
   position: relative;
   z-index: 1;
@@ -115,6 +125,7 @@ body {
   padding: 30px 16px 60px;
 }
 
+/* ============ TOP BAR ============ */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -189,6 +200,7 @@ body {
   box-shadow: 0 0 0 4px rgba(255,255,255,0.08);
 }
 
+/* ============ HERO ============ */
 .hero {
   text-align: center;
   margin-bottom: 34px;
@@ -252,6 +264,7 @@ body {
   font-weight: 500;
 }
 
+/* ============ CARDS ============ */
 .card {
   background: linear-gradient(180deg, rgba(18,22,31,0.75), rgba(10,14,23,0.85));
   backdrop-filter: blur(24px);
@@ -282,6 +295,7 @@ body {
   opacity: 0.7;
 }
 
+/* ============ SECTION LABEL ============ */
 .lbl {
   display: flex;
   align-items: center;
@@ -295,6 +309,7 @@ body {
 }
 .lbl svg { width: 14px; height: 14px; opacity: 0.75; }
 
+/* ============ EMAIL BAR ============ */
 .ebar {
   display: flex;
   gap: 10px;
@@ -334,6 +349,7 @@ body {
   75% { transform: translateX(6px); }
 }
 
+/* ============ BUTTONS ============ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -391,6 +407,7 @@ body {
   font-size: 12.5px;
 }
 
+/* ============ UNDO BAR ============ */
 .undo-bar {
   display: none;
   margin-top: 16px;
@@ -411,6 +428,7 @@ body {
 .undo-bar.show { display: flex; }
 .undo-bar b { color: var(--org); font-weight: 800; }
 
+/* progress line */
 .undo-bar::after {
   content: '';
   position: absolute;
@@ -453,6 +471,7 @@ body {
   font-size: 12px;
 }
 
+/* ============ INBOX HEADER ============ */
 .ihead {
   display: flex;
   justify-content: space-between;
@@ -509,6 +528,7 @@ body {
 .btn-refresh.spin svg { animation: spin 0.9s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ============ MESSAGES ============ */
 .msgs {
   display: flex;
   flex-direction: column;
@@ -627,6 +647,7 @@ body {
   margin-bottom: 12px;
 }
 
+/* ============ OTP ============ */
 .otp-box {
   background: linear-gradient(135deg, rgba(46,160,67,0.14), rgba(63,185,80,0.07));
   border: 1.5px solid rgba(46,160,67,0.4);
@@ -699,6 +720,7 @@ body {
 }
 .btn-otp:active { transform: scale(0.95); }
 
+/* ============ BODY ============ */
 .mbody {
   background: rgba(6,7,12,0.65);
   border: 1px solid var(--brd);
@@ -722,6 +744,7 @@ body {
   border-radius: 3px;
 }
 
+/* ============ TOASTS ============ */
 .toasts {
   position: fixed;
   bottom: 26px;
@@ -765,6 +788,7 @@ body {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* ============ CONFETTI ============ */
 #confetti {
   position: fixed;
   inset: 0;
@@ -772,6 +796,7 @@ body {
   z-index: 9998;
 }
 
+/* ============ RESPONSIVE ============ */
 @media (max-width: 560px) {
   .app { padding: 20px 12px 50px; }
   .card { padding: 20px; }
@@ -804,10 +829,11 @@ body {
 
 <div class="app">
 
+  <!-- TOP BAR -->
   <div class="topbar">
-    <div class="clock">🕐 <b id="clockTime">--:--:--</b></div>
+    <div class="clock">ًں•گ <b id="clockTime">--:--:--</b></div>
     <div class="actions" style="position: relative;">
-      <button class="icon-btn" id="themeBtn" title="تغيير اللون">
+      <button class="icon-btn" id="themeBtn" title="طھط؛ظٹظٹط± ط§ظ„ظ„ظˆظ†">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="13.5" cy="6.5" r="2.5"/>
           <circle cx="17.5" cy="14.5" r="2.5"/>
@@ -816,7 +842,7 @@ body {
           <path d="M12 2a10 10 0 1 0 0 20"/>
         </svg>
       </button>
-      <button class="icon-btn" id="soundBtn" title="صوت الإشعار">
+      <button class="icon-btn" id="soundBtn" title="طµظˆطھ ط§ظ„ط¥ط´ط¹ط§ط±">
         <svg id="soundIconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
           <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
@@ -837,44 +863,46 @@ body {
     </div>
   </div>
 
+  <!-- HERO -->
   <header class="hero">
     <div class="hero-badge">
       <span class="dot"></span>
-      LIVE • SnapMail
+      LIVE â€¢ SnapMail
     </div>
-    <h1>بريدك السريع ⚡</h1>
-    <p>أكواد التحقق توصلك فوراً — بدون تسجيل، بدون انتظار</p>
+    <h1>ط¨ط±ظٹط¯ظƒ ط§ظ„ط³ط±ظٹط¹ âڑ،</h1>
+    <p>ط£ظƒظˆط§ط¯ ط§ظ„طھط­ظ‚ظ‚ طھظˆطµظ„ظƒ ظپظˆط±ط§ظ‹ â€” ط¨ط¯ظˆظ† طھط³ط¬ظٹظ„طŒ ط¨ط¯ظˆظ† ط§ظ†طھط¸ط§ط±</p>
   </header>
 
+  <!-- EMAIL CARD -->
   <div class="card">
     <div class="lbl">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
       </svg>
-      بريدك الحالي
+      ط¨ط±ظٹط¯ظƒ ط§ظ„ط­ط§ظ„ظٹ
     </div>
     <div class="ebar">
-      <input type="text" id="emailDisplay" class="einput" value="جاري التحميل..." readonly spellcheck="false" autocomplete="off">
+      <input type="text" id="emailDisplay" class="einput" value="ط¬ط§ط±ظٹ ط§ظ„طھط­ظ…ظٹظ„..." readonly spellcheck="false" autocomplete="off">
       <button class="btn btn-primary" id="copyBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
           <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
         </svg>
-        نسخ
+        ظ†ط³ط®
       </button>
       <button class="btn btn-ghost" id="newEmailBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12a9 9 0 1 1-9-9c2.5 0 4.8 1 6.5 2.6"/>
           <polyline points="21 3 21 9 15 9"/>
         </svg>
-        جديد
+        ط¬ط¯ظٹط¯
       </button>
     </div>
 
     <div class="undo-bar" id="undoBar">
       <div class="undo-info">
-        <span>⚠️ <b>غيّرت البريد بالغلط؟</b> فرصة للرجوع</span>
+        <span>âڑ ï¸ڈ <b>ط؛ظٹظ‘ط±طھ ط§ظ„ط¨ط±ظٹط¯ ط¨ط§ظ„ط؛ظ„ط·طں</b> ظپط±طµط© ظ„ظ„ط±ط¬ظˆط¹</span>
         <span class="undo-timer" id="undoTimer">10s</span>
       </div>
       <button class="btn btn-warn btn-sm" id="undoBtn">
@@ -882,25 +910,26 @@ body {
           <polyline points="1 4 1 10 7 10"/>
           <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
         </svg>
-        رجّع القديم
+        ط±ط¬ظ‘ط¹ ط§ظ„ظ‚ط¯ظٹظ…
       </button>
     </div>
   </div>
 
+  <!-- INBOX CARD -->
   <div class="card">
     <div class="ihead">
       <div class="status">
         <span class="dot"></span>
-        <span>جاهز للاستقبال</span>
+        <span>ط¬ط§ظ‡ط² ظ„ظ„ط§ط³طھظ‚ط¨ط§ظ„</span>
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <div class="pill" id="mailCount">0 رسالة</div>
+        <div class="pill" id="mailCount">0 ط±ط³ط§ظ„ط©</div>
         <button class="btn-refresh" id="refreshBtn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12a9 9 0 1 1-9-9c2.5 0 4.8 1 6.5 2.6"/>
             <polyline points="21 3 21 9 15 9"/>
           </svg>
-          تحديث
+          طھط­ط¯ظٹط«
         </button>
       </div>
     </div>
@@ -910,8 +939,8 @@ body {
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
           <polyline points="22,6 12,13 2,6"/>
         </svg>
-        <div style="font-weight: 800; margin-bottom: 6px;">صندوق الوارد فاضي</div>
-        <div style="font-size: 12px; opacity: 0.7;">الرسائل هتظهر هنا أوتوماتيك</div>
+        <div style="font-weight: 800; margin-bottom: 6px;">طµظ†ط¯ظˆظ‚ ط§ظ„ظˆط§ط±ط¯ ظپط§ط¶ظٹ</div>
+        <div style="font-size: 12px; opacity: 0.7;">ط§ظ„ط±ط³ط§ط¦ظ„ ظ‡طھط¸ظ‡ط± ظ‡ظ†ط§ ط£ظˆطھظˆظ…ط§طھظٹظƒ</div>
       </div>
     </div>
   </div>
@@ -922,7 +951,10 @@ body {
 
 <script>
 /* =========================================================
-   SnapMail v2.6 — polling ذكي للسرعة
+   SnapMail v2.5
+   - ط§ط³طھظ‚ط¨ط§ظ„ ط£ظƒظˆط§ط¯ ط§ظ„طھط­ظ‚ظ‚
+   - 5 ط«ظٹظ…ط§طھ
+   - طھط±ط§ط¬ط¹ ط¹ظ† طھط؛ظٹظٹط± ط§ظ„ط¥ظٹظ…ظٹظ„
    ========================================================= */
 
 (function () {
@@ -940,13 +972,9 @@ var FETCH_TIMEOUT = 12000;
 var MAX_MSGS = 30;
 var MAX_BODY = 5000;
 var UNDO_WINDOW = 10;
-
-/* ⚡ التعديل الجديد: Polling متدرج */
-var POLL_FAST = 1500;
-var POLL_NORMAL = 4000;
-var POLL_SLOW = 8000;
-var FAST_WINDOW = 20000;
-var lastNewTime = Date.now();
+var POLL_MS = 1000;
+var FAST_POLL_MS = 1000;
+var FAST_POLL_WINDOW = 15000;
 
 var S = {
   email: '',
@@ -990,10 +1018,13 @@ function clean(str) {
 function findCode(text) {
   if (typeof text !== 'string' || !text) return null;
   var t = text.slice(0, 5000);
-  var m1 = t.match(/(?:code|otp|verify|verification|pin|كود|رمز|تأكيد|التحقق|التفعيل)[^\d]{0,25}(\d{4,8})\b/i);
+
+  var m1 = t.match(/(?:code|otp|verify|verification|pin|ظƒظˆط¯|ط±ظ…ط²|طھط£ظƒظٹط¯|ط§ظ„طھط­ظ‚ظ‚|ط§ظ„طھظپط¹ظٹظ„)[^\d]{0,25}(\d{4,8})\b/i);
   if (m1) return m1[1];
-  var m2 = t.match(/(?::|is|هو|التالي)\s*(\d{4,8})\b/i);
+
+  var m2 = t.match(/(?::|is|ظ‡ظˆ|ط§ظ„طھط§ظ„ظٹ)\s*(\d{4,8})\b/i);
   if (m2) return m2[1];
+
   return null;
 }
 
@@ -1141,7 +1172,7 @@ function loadAccount(forceNew) {
     return;
   }
 
-  inp.value = 'جاري التوليد...';
+  inp.value = 'ط¬ط§ط±ظٹ ط§ظ„طھظˆظ„ظٹط¯...';
   inp.disabled = true;
   stopPoll();
 
@@ -1152,44 +1183,28 @@ function loadAccount(forceNew) {
     S.email = data.email_addr;
     S.sid   = data.sid_token;
     S.msgs  = [];
-    lastNewTime = Date.now();
     persist();
     inp.disabled = false;
     inp.value = S.email;
     render();
     startPoll();
     check();
-    toast('✅ تم إنشاء بريد جديد');
+    toast('âœ… طھظ… ط¥ظ†ط´ط§ط، ط¨ط±ظٹط¯ ط¬ط¯ظٹط¯');
   }).catch(function (e) {
     inp.disabled = false;
-    inp.value = 'فشل الاتصال — اضغط "جديد"';
+    inp.value = 'ظپط´ظ„ ط§ظ„ط§طھطµط§ظ„ â€” ط§ط¶ط؛ط· "ط¬ط¯ظٹط¯"';
     inp.classList.add('error');
     setTimeout(function () { inp.classList.remove('error'); }, 2000);
-    toast('تعذر إنشاء البريد', 'error');
+    toast('طھط¹ط°ط± ط¥ظ†ط´ط§ط، ط§ظ„ط¨ط±ظٹط¯', 'error');
   });
 }
 
-/* ⚡ Polling متدرج ذكي */
 function startPoll() {
   stopPoll();
-  scheduleNext();
+  S.timer = setInterval(check, FAST_POLL_MS);
 }
-
-function scheduleNext() {
-  if (S.timer) clearTimeout(S.timer);
-  var sinceLast = Date.now() - lastNewTime;
-  var delay = POLL_SLOW;
-  if (sinceLast < FAST_WINDOW) delay = POLL_FAST;
-  else if (sinceLast < 60000) delay = POLL_NORMAL;
-
-  S.timer = setTimeout(function () {
-    check();
-    scheduleNext();
-  }, delay);
-}
-
 function stopPoll() {
-  if (S.timer) { clearTimeout(S.timer); S.timer = null; }
+  if (S.timer) { clearInterval(S.timer); S.timer = null; }
 }
 
 function check() {
@@ -1200,62 +1215,59 @@ function check() {
     .then(function (data) {
       var list = (data && Array.isArray(data.list)) ? data.list : [];
       var hasNew = false;
-      var chain = Promise.resolve();
+      var jobs = [];
 
       list.forEach(function (msg) {
         if (!msg || !validId(msg.mail_id)) return;
         var from = String(msg.mail_from || '');
         if (from.indexOf('no-reply@guerrillamail.com') !== -1) return;
-        var exists = S.msgs.some(function (x) { return x.id === msg.mail_id; });
-        if (exists) return;
+        var id = String(msg.mail_id);
+        if (S.msgs.some(function (x) { return x.id === id; })) return;
 
-        chain = chain.then(function () {
+        // ط§ط¹ط±ط¶ ط§ظ„ظ€ excerpt ظپظˆط±ط§ظ‹ ط¨ط¯ظ„ ط§ظ†طھط¸ط§ط± fetch_email
+        var excerpt = clean(msg.mail_excerpt || '').slice(0, MAX_BODY);
+        var item = {
+          id: id,
+          from: from.slice(0, 200),
+          subject: String(msg.mail_subject || '').slice(0, 300),
+          body: excerpt,
+          date: String(msg.mail_date || '').slice(0, 50),
+          fresh: true
+        };
+
+        S.msgs.unshift(item);
+        hasNew = true;
+
+        // ط¬ظ„ط¨ ط§ظ„ط¬ط³ظ… ط§ظ„ظƒط§ظ…ظ„ ظپظٹ ط§ظ„ط®ظ„ظپظٹط©ط› ظ„ط§ ظٹط¤ط®ط± ط¸ظ‡ظˆط± ط§ظ„ظƒظˆط¯
+        jobs.push((function (mail, target) {
           return safeFetch(API + '?f=fetch_email&email_id=' +
-            encodeURIComponent(msg.mail_id) + '&sid_token=' +
+            encodeURIComponent(mail.mail_id) + '&sid_token=' +
             encodeURIComponent(S.sid))
             .then(function (bd) {
-              var bodyText = (msg.mail_excerpt || '');
-              if (bd && typeof bd.mail_body === 'string') {
-                bodyText = clean(bd.mail_body).slice(0, MAX_BODY);
-              } else {
-                bodyText = clean(bodyText).slice(0, MAX_BODY);
+              if (!bd || typeof bd.mail_body !== 'string') return;
+              var full = clean(bd.mail_body).slice(0, MAX_BODY);
+              var found = S.msgs.find(function (x) { return x.id === target.id; });
+              if (found) {
+                found.body = full;
+                persist();
+                render();
               }
-              S.msgs.unshift({
-                id: String(msg.mail_id),
-                from: from.slice(0, 200),
-                subject: String(msg.mail_subject || '').slice(0, 300),
-                body: bodyText,
-                date: String(msg.mail_date || '').slice(0, 50),
-                fresh: true
-              });
-              hasNew = true;
             })
-            .catch(function () {
-              S.msgs.unshift({
-                id: String(msg.mail_id),
-                from: from.slice(0, 200),
-                subject: String(msg.mail_subject || '').slice(0, 300),
-                body: clean(msg.mail_excerpt || '').slice(0, MAX_BODY),
-                date: String(msg.mail_date || '').slice(0, 50),
-                fresh: true
-              });
-              hasNew = true;
-            });
-        });
+            .catch(function () {});
+        })(msg, item));
       });
 
-      return chain.then(function () {
-        if (hasNew) {
-          lastNewTime = Date.now();   /* ⚡ إعادة تفعيل الوضع السريع */
-          S.msgs = S.msgs.slice(0, MAX_MSGS);
-          persist();
-          render();
-          beep();
-          toast('📬 وصلت رسالة جديدة!', 'info');
-        }
-      });
+      if (hasNew) {
+        S.msgs = S.msgs.slice(0, MAX_MSGS);
+        persist();
+        render();
+        beep();
+        toast('ًں“¬ ظˆطµظ„طھ ط±ط³ط§ظ„ط© ط¬ط¯ظٹط¯ط©!', 'info');
+      }
+
+      return Promise.allSettled ? Promise.allSettled(jobs) : Promise.all(jobs);
     })
-    .catch(function (e) {})
+    .catch(function () {})
     .then(function () {
       S.polling = false;
     });
@@ -1264,7 +1276,7 @@ function check() {
 function render() {
   var list = $('messagesList');
   var count = $('mailCount');
-  count.textContent = S.msgs.length + (S.msgs.length === 1 ? ' رسالة' : ' رسائل');
+  count.textContent = S.msgs.length + (S.msgs.length === 1 ? ' ط±ط³ط§ظ„ط©' : ' ط±ط³ط§ط¦ظ„');
 
   list.innerHTML = '';
 
@@ -1275,8 +1287,8 @@ function render() {
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">' +
       '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>' +
       '<polyline points="22,6 12,13 2,6"/></svg>' +
-      '<div style="font-weight: 800; margin-bottom: 6px;">صندوق الوارد فاضي</div>' +
-      '<div style="font-size: 12px; opacity: 0.7;">الرسائل هتظهر هنا أوتوماتيك</div>';
+      '<div style="font-weight: 800; margin-bottom: 6px;">طµظ†ط¯ظˆظ‚ ط§ظ„ظˆط§ط±ط¯ ظپط§ط¶ظٹ</div>' +
+      '<div style="font-size: 12px; opacity: 0.7;">ط§ظ„ط±ط³ط§ط¦ظ„ ظ‡طھط¸ظ‡ط± ظ‡ظ†ط§ ط£ظˆطھظˆظ…ط§طھظٹظƒ</div>';
     list.appendChild(em);
     return;
   }
@@ -1308,13 +1320,13 @@ function render() {
     if (service) {
       var chip = document.createElement('div');
       chip.className = 'service-chip';
-      chip.textContent = '🔖 ' + service;
+      chip.textContent = 'ًں”– ' + service;
       card.appendChild(chip);
     }
 
     var subj = document.createElement('div');
     subj.className = 'msubj';
-    subj.textContent = m.subject || '(بدون عنوان)';
+    subj.textContent = m.subject || '(ط¨ط¯ظˆظ† ط¹ظ†ظˆط§ظ†)';
     card.appendChild(subj);
 
     if (code) {
@@ -1324,7 +1336,7 @@ function render() {
       var inner = document.createElement('div');
       var lbl = document.createElement('div');
       lbl.className = 'otp-lbl';
-      lbl.textContent = 'كود التحقق';
+      lbl.textContent = 'ظƒظˆط¯ ط§ظ„طھط­ظ‚ظ‚';
       var cd = document.createElement('div');
       cd.className = 'otp-code';
       cd.textContent = code;
@@ -1335,7 +1347,7 @@ function render() {
 
       var btn = document.createElement('button');
       btn.className = 'btn-otp';
-      btn.textContent = '⚡ نسخ الكود';
+      btn.textContent = 'âڑ، ظ†ط³ط® ط§ظ„ظƒظˆط¯';
       btn.addEventListener('click', function () { copy(code, btn, true); });
 
       box.appendChild(inner);
@@ -1345,7 +1357,7 @@ function render() {
 
     var body = document.createElement('div');
     body.className = 'mbody';
-    body.textContent = m.body || '(محتوى فارغ)';
+    body.textContent = m.body || '(ظ…ط­طھظˆظ‰ ظپط§ط±ط؛)';
     card.appendChild(body);
 
     list.appendChild(card);
@@ -1358,10 +1370,10 @@ function copy(text, btn, celebrate) {
   var done = function () {
     if (btn) {
       var old = btn.textContent;
-      btn.textContent = '✓ تم النسخ';
+      btn.textContent = 'âœ“ طھظ… ط§ظ„ظ†ط³ط®';
       setTimeout(function () { btn.textContent = old; }, 1200);
     }
-    toast('📋 تم النسخ');
+    toast('ًں“‹ طھظ… ط§ظ„ظ†ط³ط®');
     if (celebrate) confetti();
   };
 
@@ -1439,7 +1451,7 @@ function confetti() {
 function offerUndo() {
   var bar = $('undoBar');
   bar.classList.remove('show');
-  void bar.offsetWidth;
+  void bar.offsetWidth; // restart animation
   bar.classList.add('show');
   S.undoSecs = UNDO_WINDOW;
   $('undoTimer').textContent = S.undoSecs + 's';
@@ -1466,7 +1478,6 @@ function doUndo() {
   S.email = S.prevEmail;
   S.sid = S.prevSid;
   S.msgs = S.prevMsgs || [];
-  lastNewTime = Date.now();
   persist();
 
   var inp = $('emailDisplay');
@@ -1477,7 +1488,7 @@ function doUndo() {
   check();
 
   cancelUndo();
-  toast('↩️ تم استرجاع البريد القديم', 'warn');
+  toast('â†©ï¸ڈ طھظ… ط§ط³طھط±ط¬ط§ط¹ ط§ظ„ط¨ط±ظٹط¯ ط§ظ„ظ‚ط¯ظٹظ…', 'warn');
 }
 
 function newEmailFlow() {
@@ -1515,13 +1526,13 @@ function bindUI() {
     if (validEmail(S.email)) {
       copy(S.email, this, false);
     } else {
-      toast('لا يوجد بريد للنسخ', 'error');
+      toast('ظ„ط§ ظٹظˆط¬ط¯ ط¨ط±ظٹط¯ ظ„ظ„ظ†ط³ط®', 'error');
     }
   });
 
   $('newEmailBtn').addEventListener('click', function () {
     if (S.undoTimer) {
-      toast('انتظر انتهاء فرصة التراجع', 'warn');
+      toast('ط§ظ†طھط¸ط± ط§ظ†طھظ‡ط§ط، ظپط±طµط© ط§ظ„طھط±ط§ط¬ط¹', 'warn');
       return;
     }
     newEmailFlow();
@@ -1558,14 +1569,14 @@ function bindUI() {
       d.classList.toggle('active', d === dot);
     });
     persist();
-    toast('🎨 تم تغيير اللون');
+    toast('ًںژ¨ طھظ… طھط؛ظٹظٹط± ط§ظ„ظ„ظˆظ†');
   });
 
   $('soundBtn').addEventListener('click', function () {
     S.soundOn = !S.soundOn;
     $('soundIconOn').style.display  = S.soundOn ? 'block' : 'none';
     $('soundIconOff').style.display = S.soundOn ? 'none'  : 'block';
-    toast(S.soundOn ? '🔊 الصوت مفعّل' : '🔇 الصوت مكتوم');
+    toast(S.soundOn ? 'ًں”ٹ ط§ظ„طµظˆطھ ظ…ظپط¹ظ‘ظ„' : 'ًں”‡ ط§ظ„طµظˆطھ ظ…ظƒطھظˆظ…');
     if (S.soundOn) beep();
   });
 
@@ -1586,7 +1597,7 @@ function bindUI() {
 
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) stopPoll();
-    else if (S.email) { lastNewTime = Date.now(); startPoll(); check(); }
+    else if (S.email) { startPoll(); check(); }
   });
 
   window.addEventListener('beforeunload', stopPoll);
